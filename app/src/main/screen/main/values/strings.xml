@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_app_name">Courier</string>
+    <string name="label_home">Home</string>
+    <string name="label_profile">Profile</string>
+    <string name="label_delivers">Delivers</string>
+    <string name="label_own_cargo">My Cargo</string>
+    <string name="label_greetings">Hello, Erich!</string>
+    <string name="label_use_app">Start using Courier App, make your life easier!</string>
+    <string name="label_send_package">Send Package</string>
+    <string name="label_send_package_info">Create a package and choose a courier to deliver it. Your money are safe with us untill the package reaches the recipient! </string>
+    <string name="label_become_courier">Become a Courier</string>
+    <string name="label_become_courier_info">Split your transportation cost by picking up packages on your way!</string>
+    <string name="label_courier_terms">Couirier Conditions and Terms</string>
+    <string name="label_courier_terms_info">See terms and conditions of using the Courier Application. By using this web site, you agree to these terms of use.</string>
+</resources>

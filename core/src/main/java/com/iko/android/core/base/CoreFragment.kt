@@ -24,7 +24,6 @@ abstract class CoreFragment<V : CoreViewModel<*>>(
     protected lateinit var activity: CoreActivity<V>
     @Inject
     lateinit var factory: ViewModelProvider.Factory
-    private lateinit var rootView: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         performDependencyInjection()
@@ -36,15 +35,8 @@ abstract class CoreFragment<V : CoreViewModel<*>>(
     abstract fun performDependencyInjection()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return rootView
+        return inflater.inflate(layoutId, container, false)
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        performVariableDataBinding()
-    }
-
-    abstract fun performVariableDataBinding()
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)

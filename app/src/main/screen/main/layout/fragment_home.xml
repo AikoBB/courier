@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/md_grey_200">
+
+    <ImageView
+            android:id="@+id/baner"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/courier_services"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <RelativeLayout
+            android:id="@+id/welcome_layout"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="#CC594691"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_app_name"
+                android:textColor="@color/md_white_1000"
+                android:textSize="@dimen/x_large_text"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/normal_padding"/>
+
+        <TextView
+                android:id="@+id/tv_greeting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_greetings"
+                android:textColor="@color/md_grey_400"
+                android:textSize="@dimen/medium_text"
+                android:gravity="center"
+                android:layout_centerInParent="true"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_use_app"
+                android:textColor="@color/md_grey_400"
+                android:textSize="@dimen/medium_text"
+                android:gravity="center"
+                android:layout_below="@id/tv_greeting"/>
+
+    </RelativeLayout>
+
+    <com.iko.android.courier.ui.custom.ClickableInfoRow
+            android:id="@+id/send_package"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="@string/label_send_package"
+            app:subtitle="@string/label_send_package_info"
+            android:drawable="@drawable/ic_local_mall_blue_24dp"
+            app:layout_constraintTop_toBottomOf="@+id/baner"
+            app:layout_constraintBottom_toBottomOf="@+id/welcome_layout"/>
+
+    <com.iko.android.courier.ui.custom.ClickableInfoRow
+            android:id="@+id/courier_terms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="@string/label_courier_terms"
+            app:subtitle="@string/label_courier_terms_info"
+            android:drawable="@drawable/ic_info_light_blue_24dp"
+            app:layout_constraintTop_toBottomOf="@+id/send_package" android:layout_marginTop="16dp"/>
+
+    <com.iko.android.courier.ui.custom.ClickableInfoRow
+            android:id="@+id/become_courier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="@string/label_become_courier"
+            app:subtitle="@string/label_become_courier_info"
+            android:drawable="@drawable/ic_location_on_purple_24dp"
+            app:layout_constraintTop_toBottomOf="@+id/courier_terms" android:layout_marginTop="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

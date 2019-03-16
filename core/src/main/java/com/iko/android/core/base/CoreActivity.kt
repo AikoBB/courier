@@ -27,6 +27,7 @@ abstract class CoreActivity<V : CoreViewModel<*>>(
     override fun onCreate(savedInstanceState: Bundle?) {
         performDependencyInjection()
         super.onCreate(savedInstanceState)
+        setContentView(layoutId)
         viewModel = ViewModelProviders.of(this, factory).get(viewModelClass)
     }
 
