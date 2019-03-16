@@ -1,14 +1,12 @@
 package com.iko.android.modularapp.base
 
 import android.content.Context
-import android.graphics.Color
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import kotlinx.android.synthetic.main.toolbar.*
 import javax.inject.Inject
 
 
@@ -32,15 +30,6 @@ abstract class CoreActivity<V : CoreViewModel<*>>(
     }
 
     abstract fun performDependencyInjection()
-
-    protected fun setupToolbar(title: String? = null) {
-        setSupportActionBar(toolbar)
-        supportActionBar?.setHomeButtonEnabled(true)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        toolbar?.setNavigationOnClickListener { finish() }
-        toolbar?.setTitleTextColor(Color.WHITE)
-        title?.let { supportActionBar?.title = it }
-    }
 
     fun hideKeyboard() {
         val view = this.currentFocus

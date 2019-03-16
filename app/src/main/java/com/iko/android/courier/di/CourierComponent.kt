@@ -1,5 +1,7 @@
 package com.iko.android.courier.di
 
+import com.iko.android.courier.di.components.cargo.CargoComponent
+import com.iko.android.courier.di.components.cargo.CargoModule
 import com.iko.android.courier.di.components.main.MainComponent
 import com.iko.android.courier.di.components.main.MainModule
 import com.iko.android.courier.di.scope.ApplicationScope
@@ -12,9 +14,10 @@ import dagger.Component
     modules = [
         CourierModule::class,
         ViewModelModule::class,
-        MainModule::class
+        MainModule::class,
+        CargoModule::class
     ],
     dependencies = [CoreComponent::class]
 )
-interface CourierComponent : MainComponent {
+interface CourierComponent : MainComponent, CargoComponent {
 }

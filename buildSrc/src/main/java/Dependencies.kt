@@ -140,3 +140,11 @@ object TestLibs {
     val testRunner = "androidx.test:runner:${Versions.testRunner}"
     val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
 }
+
+object FacebookLibs{
+    val fresco  = "com.facebook.fresco:fresco:1.12.1"
+}
+
+object ThirdLibs{
+    val foldingCell = "com.ramotion.foldingcell:folding-cell:1.2.3"
+}

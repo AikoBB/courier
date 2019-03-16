@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_cargoes">Cargoes</string>
+    <string name="label_empty_list">The list is empty</string>
+    <string name="label_no_orders">Looks like nobody has not created order yet.</string>
+    <string name="label_price" translatable="false">PRICE(c)</string>
+    <string name="label_requests" translatable="false">REQUESTS</string>
+    <string name="label_request" translatable="false">REQUEST</string>
+    <string name="label_weight" translatable="false">WEIGHT(kg)</string>
+    <string name="label_delivery_type" translatable="false">DELIVERY TYPE</string>
+    <string name="label_sender_info" translatable="false">Sender Information</string>
+    <string name="label_receiver_info" translatable="false">Receiver Information</string>
+</resources>

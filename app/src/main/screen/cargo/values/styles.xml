@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TitleBadgeText" parent="AppTheme">
+        <item name="android:textColor">#adafb1</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="TitleBadgeTitle" parent="AppTheme">
+        <item name="android:textColor">#adafb1</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="PersonInfoTextStyle" parent="AppTheme">
+        <item name="android:textColor">@color/md_black_1000</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+        <item name="android:layout_marginLeft">@dimen/normal_padding</item>
+        <item name="android:layout_marginTop">@dimen/small_padding</item>
+        <item name="android:drawablePadding">@dimen/small_padding</item>
+    </style>
+
+</resources>

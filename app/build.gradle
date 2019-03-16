@@ -37,7 +37,6 @@ android {
         }
     }
 
-
 }
 
 dependencies {
@@ -62,5 +61,7 @@ dependencies {
     api GoogleLibs.daggerAndroid
     kapt GoogleLibs.daggerProcessor
     kapt GoogleLibs.daggerCompiler
+    implementation ThirdLibs.foldingCell
+    implementation FacebookLibs.fresco
     implementation project(Modules.core)
 }
