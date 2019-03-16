@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion Versions.compileSdk
+    defaultConfig {
+        applicationId "com.iko.android.courier"
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        versionCode Releases.versionCode
+        versionName Releases.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets{
+        main {
+            res.srcDirs = [
+                    'src/main/res',
+                    'src/main/screen/main',
+                    'src/main/screen/cargo',
+            ]
+        }
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api AndroidLibs.appcompat
+    api AndroidLibs.fragment
+    api AndroidLibs.recyclerview
+    api AndroidLibs.cardview
+    api AndroidLibs.constraintLayout
+    api AndroidLibs.design
+    api AndroidArchLibs.lifecycleCommon
+    api AndroidArchLibs.lifecycleExtensions
+    api AndroidArchLibs.roomRuntime
+    api AndroidArchLibs.roomRxjava2
+    api KotlinLibs.kotlin
+    api KotlinLibs.ktx
+    api KotlinLibs.coroutines
+    api KotlinLibs.coroutinesAndroid
+    api ReactiveXLibs.rxJava
+    api ReactiveXLibs.rxAndroid
+    api GoogleLibs.dagger
+    api GoogleLibs.daggerAndroid
+    kapt GoogleLibs.daggerProcessor
+    kapt GoogleLibs.daggerCompiler
+    implementation project(Modules.core)
+}

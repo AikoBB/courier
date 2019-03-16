@@ -1,0 +1,66 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion Versions.compileSdk
+
+    defaultConfig {
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api AndroidLibs.appcompat
+    api AndroidLibs.fragment
+    api AndroidLibs.recyclerview
+    api AndroidLibs.cardview
+    api AndroidLibs.constraintLayout
+    api AndroidLibs.design
+
+    api AndroidArchLibs.lifecycleCommon
+    api AndroidArchLibs.lifecycleExtensions
+    api AndroidArchLibs.roomRuntime
+    api AndroidArchLibs.roomRxjava2
+
+    api KotlinLibs.kotlin
+    api KotlinLibs.ktx
+    api KotlinLibs.coroutines
+    api KotlinLibs.coroutinesAndroid
+
+    api ReactiveXLibs.rxJava
+    api ReactiveXLibs.rxAndroid
+
+    api GoogleLibs.dagger
+    api GoogleLibs.daggerAndroid
+    kapt GoogleLibs.daggerProcessor
+    kapt GoogleLibs.daggerCompiler
+    api GoogleLibs.gson
+
+    api SquareLibs.okhttp
+    api SquareLibs.okhttpDownloader
+    api SquareLibs.retrofit
+    api SquareLibs.retrofitRxAdapter
+
+    testImplementation TestLibs.junit
+    androidTestImplementation TestLibs.testRunner
+    androidTestImplementation TestLibs.espresso
+}
+
