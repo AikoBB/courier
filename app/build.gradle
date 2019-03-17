@@ -33,6 +33,7 @@ android {
                     'src/main/screen/main',
                     'src/main/screen/cargo',
                     'src/main/custom-view/clickable-info-row',
+                    'src/main/custom-view/title-text-view'
             ]
         }
     }

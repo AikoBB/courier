@@ -22,6 +22,9 @@
         <activity android:name=".ui.cargo.list.CargoListActivity"
                   android:screenOrientation="portrait"/>
 
+        <activity android:name=".ui.cargo.create.CreateCargoActivity"
+                  android:screenOrientation="portrait"/>
+
 
     </application>
 

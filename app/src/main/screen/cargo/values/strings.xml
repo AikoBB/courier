@@ -10,4 +10,13 @@
     <string name="label_delivery_type" translatable="false">DELIVERY TYPE</string>
     <string name="label_sender_info" translatable="false">Sender Information</string>
     <string name="label_receiver_info" translatable="false">Receiver Information</string>
+    <string name="label_create_cargo">Create Cargo</string>
+    <string name="label_place_order">Place Order</string>
+    <string name="label_pickup_address">Pick up Address</string>
+    <string name="label_delivery_address">Delivery Address</string>
+    <string name="label_change_address">Change Address</string>
+    <string name="label_delivery_date">Delivery date and time</string>
+    <string name="label_date">Date</string>
+    <string name="label_time">Time</string>
+    <string name="label_type">Type</string>
 </resources>
