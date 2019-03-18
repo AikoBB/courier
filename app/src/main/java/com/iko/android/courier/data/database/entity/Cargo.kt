@@ -1,5 +1,6 @@
 package com.iko.android.courier.data.database.entity
 
+import java.text.SimpleDateFormat
 import java.util.*
 
 data class Cargo(
@@ -14,7 +15,21 @@ data class Cargo(
     var deliveryTime: Date? = null,
     var deliveryType: DeliveryType? = null,
     var deliveryState: DeliveryState
-)
+) {
+    fun getDateOnly(): String {
+        return when (deliveryTime != null) {
+            true -> SimpleDateFormat("dd-MM-yyyy").format(deliveryTime)
+            else -> ""
+        }
+    }
+
+    fun getTimeOnly(): String {
+        return when (deliveryTime != null) {
+            true -> SimpleDateFormat("HH:mm").format(deliveryTime)
+            else -> ""
+        }
+    }
+}
 
 enum class DeliveryState {
     CREATED,

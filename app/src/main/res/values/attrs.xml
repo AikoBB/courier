@@ -3,8 +3,10 @@
 
     <declare-styleable name="CourierCustomAttributes">
         <attr name="android:drawable"/>
+        <attr name="android:hint"/>
         <attr name="title" format="string"/>
         <attr name="subtitle" format="string"/>
+        <attr name="editable" format="boolean"/>
     </declare-styleable>
 
 </resources>

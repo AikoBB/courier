@@ -23,6 +23,7 @@
                   android:screenOrientation="portrait"/>
 
         <activity android:name=".ui.cargo.create.CreateCargoActivity"
+                  android:theme="@style/CreateCargoStyle"
                   android:screenOrientation="portrait"/>
 
 

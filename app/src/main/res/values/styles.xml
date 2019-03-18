@@ -17,7 +17,7 @@
         <item name="android:background">@drawable/brg_rounded_button</item>
         <item name="android:layout_margin">@dimen/normal_padding</item>
         <item name="android:textColor">@color/md_white_1000</item>
-        <item name="android:textSize">@dimen/x_large_text</item>
+        <item name="android:textSize">@dimen/large_text</item>
     </style>
 
     <style name="TitleTextStyle">
@@ -28,11 +28,24 @@
         <item name="android:drawablePadding">@dimen/medium_padding</item>
     </style>
 
-    <style name="NormalAppText">
+    <style name="AppText">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="NormalAppText" parent="AppText">
         <item name="android:textSize">@dimen/normal_text</item>
+    </style>
+
+    <style name="SmallAppText" parent="AppText">
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="NormalAppInputText" parent="AppText">
+        <item name="android:textSize">@dimen/normal_text</item>
+        <item name="android:maxLength">50</item>
+        <item name="android:drawablePadding">@dimen/small_padding</item>
     </style>
 
 </resources>
