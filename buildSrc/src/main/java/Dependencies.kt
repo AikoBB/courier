@@ -118,6 +118,7 @@ object SquareLibs {
 }
 
 object GoogleLibs {
+    val services = "com.google.gms:google-services:4.2.0"
     val auth = "com.google.android.gms:play-services-auth:${Versions.googleAuth}"
     val dagger = "com.google.dagger:dagger:${Versions.dagger}"
     val daggerAndroid = "com.google.dagger:dagger-android-support:${Versions.dagger}"

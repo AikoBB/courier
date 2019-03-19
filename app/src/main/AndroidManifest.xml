@@ -20,6 +20,7 @@
         </activity>
 
         <activity android:name=".ui.auth.login.LoginActivity"
+                  android:theme="@style/AuthStyle"
                   android:screenOrientation="portrait"/>
 
         <activity android:name=".ui.main.MainActivity"

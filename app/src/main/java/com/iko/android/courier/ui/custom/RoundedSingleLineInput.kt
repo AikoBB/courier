@@ -25,6 +25,9 @@ class RoundedSingleLineInput(context: Context, private val attrs: AttributeSet) 
         }
     }
 
-    fun getText() = input.text
+    fun getText() = input.text.toString()
+    fun setInputText(type: Int){
+        input.inputType = type
+    }
 
 }

@@ -2,14 +2,14 @@ package com.iko.android.courier.ui.custom
 
 import android.content.Context
 import android.util.AttributeSet
-import android.util.Patterns
 import android.view.LayoutInflater
 import com.iko.android.core.extension.showWarningDialog
 import com.iko.android.courier.R
 import com.iko.android.courier.data.database.entity.Person
+import com.iko.android.courier.utils.isValidEmail
+import com.iko.android.courier.utils.isValidPhoneNumber
 import kotlinx.android.synthetic.main.person_info_input_view.view.*
 import kotlinx.android.synthetic.main.titled_layout.view.*
-import java.util.regex.Pattern
 
 class PersonInfoInputView(context: Context, private val attrs: AttributeSet) : TitledLayout(context, attrs), Validator {
 
@@ -35,14 +35,11 @@ class PersonInfoInputView(context: Context, private val attrs: AttributeSet) : T
                 false
             }
             receiver_phone.text.isEmpty()
-                    || !Pattern.matches(
-                "(0|996|\\+996)?(70[\\d]|50[\\d]|77[\\d]|55[\\d]|755)(\\d{6})",
-                receiver_phone.text.toString()
-            ) -> {
+                    || !receiver_phone.text.toString().isValidPhoneNumber -> {
                 context.showWarningDialog(context.getString(R.string.warning_empty_incorrect, receiver_phone.hint))
                 false
             }
-            receiver_email.text.isNotEmpty() && !Patterns.EMAIL_ADDRESS.matcher(receiver_email.text.toString()).matches() -> {
+            receiver_email.text.isNotEmpty() && !receiver_email.text.toString().isValidEmail -> {
                 context.showWarningDialog(context.getString(R.string.warning_incorrect, receiver_email.hint))
                 false
             }

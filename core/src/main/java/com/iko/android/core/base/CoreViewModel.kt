@@ -9,7 +9,7 @@ import io.reactivex.disposables.CompositeDisposable
  */
 open class CoreViewModel<T> : ViewModel() {
 
-    private var isLoading: MutableLiveData<Boolean> = MutableLiveData()
+    var isLoading: MutableLiveData<Boolean> = MutableLiveData()
     val event: MutableLiveData<T> = MutableLiveData()
     private var compositeDisposable: CompositeDisposable = CompositeDisposable()
 

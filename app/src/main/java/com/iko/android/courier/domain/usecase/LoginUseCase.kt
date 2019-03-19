@@ -8,7 +8,7 @@ import javax.inject.Inject
 class LoginUseCase @Inject constructor(private val authRepository: AuthRepository): UseCase<LoginUseCase.Params, Callback<Person, String?>>(){
 
     override fun run(params: Params, callback: Callback<Person, String?>) {
-        authRepository.login(params.email, params.email, callback)
+        authRepository.login(params.email, params.password, callback)
     }
 
     data class Params(val email: String, val password: String)

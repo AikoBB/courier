@@ -11,6 +11,7 @@
             android:inputType="text"
             android:singleLine="true"
             android:maxLines="1"
-            android:layout_margin="@dimen/small_padding"/>
+            android:layout_margin="@dimen/small_padding"
+            android:background="@null"/>
 
 </RelativeLayout>

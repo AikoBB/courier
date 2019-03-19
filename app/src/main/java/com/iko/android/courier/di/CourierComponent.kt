@@ -1,5 +1,6 @@
 package com.iko.android.courier.di
 
+import com.iko.android.courier.di.components.RepositoryProvider
 import com.iko.android.courier.di.components.auth.AuthComponent
 import com.iko.android.courier.di.components.auth.AuthModule
 import com.iko.android.courier.di.components.cargo.CargoComponent
@@ -18,7 +19,8 @@ import dagger.Component
         ViewModelModule::class,
         AuthModule::class,
         MainModule::class,
-        CargoModule::class
+        CargoModule::class,
+        RepositoryProvider::class
     ],
     dependencies = [CoreComponent::class]
 )

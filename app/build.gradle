@@ -36,6 +36,7 @@ android {
                     'src/main/custom-view/clickable-info-row',
                     'src/main/custom-view/title-text-view',
                     'src/main/custom-view/input-view',
+                    'src/main/custom-view/layout-view',
             ]
         }
     }
@@ -72,3 +73,5 @@ dependencies {
     implementation FacebookLibs.fresco
     implementation project(Modules.core)
 }
+
+apply plugin: 'com.google.gms.google-services'
