@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:background="@color/md_grey_200">
+
+    <LinearLayout
+            android:id="@+id/layout_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/md_white_1000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="@dimen/normal_padding"
+            android:orientation="vertical">
+
+        <TextView
+                style="@style/NormalAppText"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/xx_large_text"
+                android:textStyle="bold"
+                android:text="@string/app_name"
+                android:layout_marginTop="@dimen/large_padding"/>
+
+        <TextView
+                style="@style/NormalAppText"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:text="@string/label_credo"/>
+
+        <com.iko.android.courier.ui.custom.RoundedSingleLineInput
+                android:id="@+id/input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawable="@drawable/ic_mail_outline_black_24dp"
+                android:hint="@string/label_email"
+                android:layout_marginLeft="@dimen/normal_padding"
+                android:layout_marginRight="@dimen/normal_padding"
+                android:layout_marginTop="@dimen/medium_padding"
+                android:layout_marginBottom="@dimen/small_padding"/>
+
+        <com.iko.android.courier.ui.custom.RoundedSingleLineInput
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_password"
+                android:layout_marginLeft="@dimen/normal_padding"
+                android:layout_marginRight="@dimen/normal_padding"
+                android:layout_marginTop="@dimen/small_padding"
+                android:layout_marginBottom="@dimen/small_padding"
+                android:drawable="@drawable/ic_vpn_key_black_24dp"/>
+
+        <Button
+                android:id="@+id/btn_login"
+                style="@style/RoundedButton"
+                android:text="@string/label_login"/>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

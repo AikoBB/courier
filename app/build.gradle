@@ -30,11 +30,12 @@ android {
         main {
             res.srcDirs = [
                     'src/main/res',
+                    'src/main/screen/auth',
                     'src/main/screen/main',
                     'src/main/screen/cargo',
                     'src/main/custom-view/clickable-info-row',
                     'src/main/custom-view/title-text-view',
-                    'src/main/custom-view/input-view'
+                    'src/main/custom-view/input-view',
             ]
         }
     }
@@ -63,6 +64,10 @@ dependencies {
     api GoogleLibs.daggerAndroid
     kapt GoogleLibs.daggerProcessor
     kapt GoogleLibs.daggerCompiler
+
+    api FirebaseLibs.auth
+    api GoogleLibs.auth
+
     implementation ThirdLibs.foldingCell
     implementation FacebookLibs.fresco
     implementation project(Modules.core)

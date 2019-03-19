@@ -1,7 +1,7 @@
 package com.iko.android.courier.data.database.entity
 
 data class Person(
-    val id: Long,
+    val id: Long = 1,
     var fullName: String? = null,
     var phoneNumber: String? = null,
     var email: String? = null,

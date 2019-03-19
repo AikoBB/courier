@@ -127,8 +127,8 @@ object GoogleLibs {
 }
 
 object FirebaseLibs {
-    val auth = "com.google.firebase:firebase-auth:${Versions.firebase}"
-    val core = "com.google.firebase:firebase-core:${Versions.firebase}"
+    val auth = "com.google.firebase:firebase-auth:16.2.0"
+    val core = "com.google.firebase:firebase-core:16.0.8"
 }
 
 object TestLibs {

@@ -1,5 +1,7 @@
 package com.iko.android.courier.ui.main
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.iko.android.courier.CourierApp
@@ -52,6 +54,18 @@ class MainActivity : CoreActivity<MainVM>(MainVM::class.java, R.layout.activity_
         val fragment = supportFragmentManager.findFragmentByTag(HomeFragment::class.java.canonicalName)
         if (fragment == null || !fragment.isVisible) showHomeFragment()
         else super.onBackPressed()
+    }
+
+    companion object {
+
+        fun start(activity: Activity?){
+            val intent = Intent(activity, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK or
+                    Intent.FLAG_ACTIVITY_NEW_TASK
+            activity?.startActivity(intent)
+        }
+
     }
 
 }
