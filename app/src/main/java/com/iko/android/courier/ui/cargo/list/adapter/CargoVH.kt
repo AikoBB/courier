@@ -5,12 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import com.iko.android.courier.R
 import com.iko.android.courier.data.database.entity.Cargo
+import com.iko.android.courier.utils.getFormattedForm
 import com.iko.android.modularapp.base.CoreViewHolder
 import kotlinx.android.synthetic.main.item_cargo.view.*
 import kotlinx.android.synthetic.main.item_cargo_detail.view.*
 import kotlinx.android.synthetic.main.item_cargo_title.view.*
 import kotlinx.android.synthetic.main.item_person_info.view.*
-import java.text.SimpleDateFormat
 
 class CargoVH(itemView: View) : CoreViewHolder<Cargo>(itemView) {
 
@@ -24,8 +24,8 @@ class CargoVH(itemView: View) : CoreViewHolder<Cargo>(itemView) {
         }
 
         item.deliveryTime?.let {
-            val date = SimpleDateFormat("dd-MM-yyyy").format(it)
-            val time = SimpleDateFormat("HH:mm").format(it)
+            val date = it.getFormattedForm()
+            val time = it.getFormattedForm("HH:mm")
             itemView.short_info.title_time_label.text = time
             itemView.short_info.title_date_label.text = date
         }

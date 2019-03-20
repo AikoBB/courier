@@ -20,6 +20,7 @@
     <dimen name="normal_image">24dp</dimen>
     <dimen name="medium_image">32dp</dimen>
     <dimen name="large_image">40dp</dimen>
+    <dimen name="huge_image">100dp</dimen>
 
     <dimen name="small_float_btn">16dp</dimen>
     <dimen name="normal_float_btn">24dp</dimen>

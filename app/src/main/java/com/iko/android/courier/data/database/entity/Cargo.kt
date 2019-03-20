@@ -1,5 +1,6 @@
 package com.iko.android.courier.data.database.entity
 
+import com.iko.android.courier.utils.getFormattedForm
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -18,14 +19,14 @@ data class Cargo(
 ) {
     fun getDateOnly(): String {
         return when (deliveryTime != null) {
-            true -> SimpleDateFormat("dd-MM-yyyy").format(deliveryTime)
+            true -> deliveryTime!!.getFormattedForm()
             else -> ""
         }
     }
 
     fun getTimeOnly(): String {
         return when (deliveryTime != null) {
-            true -> SimpleDateFormat("HH:mm").format(deliveryTime)
+            true -> deliveryTime!!.getFormattedForm("HH:mm")
             else -> ""
         }
     }

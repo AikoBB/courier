@@ -12,6 +12,7 @@ import com.iko.android.core.extension.showWarningDialog
 import com.iko.android.courier.R
 import com.iko.android.courier.data.database.entity.Cargo
 import com.iko.android.courier.data.database.entity.DeliveryType
+import com.iko.android.courier.utils.getFormattedForm
 import com.iko.android.modularapp.extension.gone
 import kotlinx.android.synthetic.main.date_time_input_view.view.*
 import kotlinx.android.synthetic.main.titled_layout.view.*
@@ -55,7 +56,7 @@ class DateTimeInputView(context: Context, private val attrs: AttributeSet) : Tit
                 calendar.set(Calendar.YEAR, mYear)
                 calendar.set(Calendar.MONTH, monthOfYear)
                 calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-                inputView.delivery_date.text = SimpleDateFormat("dd/MM/yyyy").format(Date(calendar.timeInMillis))
+                inputView.delivery_date.text = Date(calendar.timeInMillis).getFormattedForm()
             }, year, month, day)
         pickerDialog.datePicker.minDate = calendar.timeInMillis
         pickerDialog.show()

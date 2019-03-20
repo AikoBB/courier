@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="label_personal_info">Personal Info</string>
+    <string name="label_reviews">Reviews</string>
+    <string name="label_balance">Balance</string>
+    <string name="label_earnings">Earnings</string>
+    <string name="label_earn_money">Start delivering and earn Money!</string>
+    <string name="label_expenses">Expenses</string>
+    <string name="label_charging_info">Delivery costs you have paid will appear here!</string>
+    <string name="warning_feature_later">This feature will be available later</string>
+    <string name="label_no_reviews">Looks like nobody has not reviewed your profile yet.</string>
 
 </resources>

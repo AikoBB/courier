@@ -31,9 +31,12 @@ class CargoListActivity : CoreActivity<CargoListVM>(CargoListVM::class.java, R.l
 
     private fun setupRecycleView() {
         adapter = CargoAdapter(this)
-        cargoes.layoutManager = LinearLayoutManager(this)
-        cargoes.itemAnimator = DefaultItemAnimator()
+        cargoes.run {
+            layoutManager = LinearLayoutManager(this@CargoListActivity)
+            itemAnimator = DefaultItemAnimator()
+        }
         cargoes.adapter = adapter
+
     }
 
     override fun onCargoClick(cargo: Cargo) {
