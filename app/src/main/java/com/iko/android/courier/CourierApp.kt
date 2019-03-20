@@ -1,5 +1,6 @@
 package com.iko.android.courier
 
+import com.facebook.drawee.backends.pipeline.Fresco
 import com.google.firebase.FirebaseApp
 import com.iko.android.courier.di.CourierComponent
 import com.iko.android.courier.di.DaggerCourierComponent
@@ -14,7 +15,8 @@ class CourierApp: CoreApp(){
     }
 
     override fun onCreate() {
-        FirebaseApp.initializeApp(this)
         super.onCreate()
+        FirebaseApp.initializeApp(this)
+        Fresco.initialize(this)
     }
 }
