@@ -21,7 +21,7 @@ class HomeFragment : CoreFragment<MainVM>(MainVM::class.java, com.iko.android.co
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         subscribeToLiveData()
-        send_package.setOnClickListener { CreateCargoActivity.start(activity) }
+        send_package.setOnClickListener { CreateCargoActivity.start(activity, viewModel.currentUser!!) }
         become_courier.setOnClickListener { CargoListActivity.start(activity) }
         viewModel.currentUser?.let { greetCurrentUser(it) }
     }

@@ -54,7 +54,7 @@ interface ProfileRepository {
 
         override fun getReviewsByEmail(email: String, callback: Callback<List<Review>, String?>) {
             val reviewsReference = database.getReference(TAG_REVIEWS)
-            reviewsReference.addListenerForSingleValueEvent(CustomValueEventListener(
+            reviewsReference.addValueEventListener(CustomValueEventListener(
                 { data ->
                     val reviews = mutableListOf<Review>()
                     data.children.forEach {

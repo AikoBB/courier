@@ -30,12 +30,12 @@ class CargoVH(itemView: View) : CoreViewHolder<Cargo>(itemView) {
             itemView.short_info.title_date_label.text = date
         }
 
-        item.addressFrom.name?.let {
+        item.addressFrom?.name?.let {
             itemView.short_info.title_from_address.text = it
             itemView.detail.address_from.text = it
         }
 
-        item.addressTo.name?.let {
+        item.addressTo?.name?.let {
             itemView.short_info.title_to_address.text = it
             itemView.detail.address_to.text = it
         }

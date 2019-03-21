@@ -39,10 +39,6 @@ class PersonInfoInputView(context: Context, private val attrs: AttributeSet) : T
                 context.showWarningDialog(context.getString(R.string.warning_empty_incorrect, receiver_phone.hint))
                 false
             }
-            receiver_email.text.isNotEmpty() && !receiver_email.text.toString().isValidEmail -> {
-                context.showWarningDialog(context.getString(R.string.warning_incorrect, receiver_email.hint))
-                false
-            }
             else -> true
         }
     }
@@ -53,7 +49,7 @@ class PersonInfoInputView(context: Context, private val attrs: AttributeSet) : T
         receiver_phone.setText(person.phoneNumber)
     }
 
-    fun getInputs(person: Person) {
+    fun setToPerson(person: Person) {
         person.fullName = receiver_name.text.toString()
         person.email = receiver_email.text.toString()
         person.phoneNumber = receiver_phone.text.toString()

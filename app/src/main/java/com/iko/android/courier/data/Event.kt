@@ -1,5 +1,6 @@
 package com.iko.android.courier.data
 
+import com.iko.android.courier.data.database.entity.Cargo
 import com.iko.android.courier.data.database.entity.Person
 import com.iko.android.courier.data.database.entity.Review
 
@@ -18,4 +19,10 @@ sealed class AuthEvent: Event(){
 sealed class ProfileEvent: Event(){
     class ProfileFetched(val person: Person): ProfileEvent()
     class ReviewListFetched(val reviews: List<Review>, val rating: Float): ProfileEvent()
+}
+
+sealed class CargoEvent: Event(){
+    class CargoUpdated(val cargo: Cargo): CargoEvent()
+    class CargoCreated(val cargo: Cargo): CargoEvent()
+    class CargoListFetched(val cargoes: List<Cargo>): CargoEvent()
 }

@@ -47,7 +47,7 @@ class MultiLineInputView(context: Context, private val attrs: AttributeSet) : Ti
 
     override fun isValidInput(): Boolean {
         val isNotEmpty = getText().isNotEmpty()
-        if (isNotEmpty) context.showWarningDialog(context.getString(R.string.warning_can_not_be_empty, input.hint))
+        if (!isNotEmpty) context.showWarningDialog(context.getString(R.string.warning_can_not_be_empty, input.hint))
         return isNotEmpty
     }
 

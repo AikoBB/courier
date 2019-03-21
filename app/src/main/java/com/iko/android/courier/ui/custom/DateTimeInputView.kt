@@ -69,7 +69,7 @@ class DateTimeInputView(context: Context, private val attrs: AttributeSet) : Tit
         val timePicker = TimePickerDialog(
             context,
             TimePickerDialog.OnTimeSetListener { _, selectedHour, selectedMinute ->
-                delivery_time.text = "$selectedHour:$selectedMinute"
+                inputView.delivery_time.text = "$selectedHour:$selectedMinute"
             }, hour, minute, true
         )
         timePicker.setTitle(context.getString(R.string.label_select_time))
@@ -82,12 +82,20 @@ class DateTimeInputView(context: Context, private val attrs: AttributeSet) : Tit
         inputView.spinner.adapter = ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, types)
         inputView.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {}
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                if (isLastItemSelected()) {
+                    inputView.delivery_date.text = context.getString(R.string.label_date)
+                    inputView.delivery_time.text = context.getString(R.string.label_time)
+                }
+            }
         }
     }
 
+    private fun isLastItemSelected() = inputView.spinner.selectedItemPosition > 1
+
     override fun isValidInput(): Boolean {
         return when {
+            isLastItemSelected() -> true
             inputView.delivery_date.text == context.getString(com.iko.android.courier.R.string.label_date) -> {
                 context.showWarningDialog(
                     context.getString(
@@ -131,9 +139,10 @@ class DateTimeInputView(context: Context, private val attrs: AttributeSet) : Tit
         }
     }
 
-    fun getInputs(cargo: Cargo) {
-        cargo.deliveryTime =
-            SimpleDateFormat("dd/MM/yyyy HH:mm").parse("${inputView.delivery_date.text} ${inputView.delivery_time.text}")
+    fun setToCargo(cargo: Cargo) {
+        if (!isLastItemSelected())
+            cargo.deliveryTime =
+                SimpleDateFormat("dd/MM/yyyy HH:mm").parse("${inputView.delivery_date.text} ${inputView.delivery_time.text}")
         cargo.deliveryType = when (inputView.spinner.selectedItemPosition) {
             0 -> DeliveryType.EXPRESS
             1 -> DeliveryType.ASAP
