@@ -5,7 +5,7 @@
     <string name="label_profile">Profile</string>
     <string name="label_delivers">Delivers</string>
     <string name="label_own_cargo">My Cargo</string>
-    <string name="label_greetings">Hello, Erich!</string>
+    <string name="label_greetings">Hello, %s!</string>
     <string name="label_use_app">Start using Courier App, make your life easier!</string>
     <string name="label_send_package">Send Package</string>
     <string name="label_send_package_info">Create a package and choose a courier to deliver it. Your money are safe with us untill the package reaches the recipient! </string>

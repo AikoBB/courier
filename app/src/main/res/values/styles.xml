@@ -36,6 +36,15 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/colorText</item>
+        <item name="android:drawablePadding">@dimen/small_padding</item>
+    </style>
+
+    <style name="WhiteTitleAppText" parent="AppText">
+        <item name="android:textSize">@dimen/x_large_text</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/small_padding</item>
     </style>
 
     <style name="NormalAppText" parent="AppText">

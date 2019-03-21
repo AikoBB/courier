@@ -64,11 +64,11 @@ abstract class CoreActivity<V : CoreViewModel<*>>(
         }
     }
 
-    private fun showLoading() {
+    fun showLoading() {
         loader.show()
     }
 
-    private fun hideLoading() {
+    fun hideLoading() {
         loader.dismiss()
     }
 

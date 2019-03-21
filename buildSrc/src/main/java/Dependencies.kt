@@ -130,6 +130,7 @@ object GoogleLibs {
 object FirebaseLibs {
     val auth = "com.google.firebase:firebase-auth:16.2.0"
     val core = "com.google.firebase:firebase-core:16.0.8"
+    val database = "com.google.firebase:firebase-database:16.0.6"
 }
 
 object TestLibs {
@@ -148,4 +149,6 @@ object FacebookLibs{
 
 object ThirdLibs{
     val foldingCell = "com.ramotion.foldingcell:folding-cell:1.2.3"
+    val parcels = "org.parceler:parceler-api:1.1.12"
+    val parcelsProcessor = "org.parceler:parceler:1.1.12"
 }

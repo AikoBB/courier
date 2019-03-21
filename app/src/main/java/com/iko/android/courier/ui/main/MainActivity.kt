@@ -31,7 +31,7 @@ class MainActivity : CoreActivity<MainVM>(MainVM::class.java, R.layout.activity_
                     R.id.action_home -> showHomeFragment()
                     R.id.action_cargo -> showFragment(HomeFragment(), HomeFragment::class.java.canonicalName)
                     R.id.action_delivers -> showFragment(HomeFragment(), HomeFragment::class.java.canonicalName)
-                    R.id.action_profile -> showFragment(ProfileFragment(), ProfileFragment::class.java.canonicalName)
+                    R.id.action_profile -> showFragment(ProfileFragment.getInstance(viewModel.currentUser!!), ProfileFragment::class.java.canonicalName)
                 }
             true
         }

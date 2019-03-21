@@ -46,7 +46,6 @@ class CargoListActivity : CoreActivity<CargoListVM>(CargoListVM::class.java, R.l
     fun createList(): MutableList<Cargo> {
         val list = mutableListOf<Cargo>()
         val p1 = Person(
-            id = 1,
             fullName = "John Smith",
             email = "john@mail.com",
             isCourier = false,
@@ -55,7 +54,6 @@ class CargoListActivity : CoreActivity<CargoListVM>(CargoListVM::class.java, R.l
         )
 
         val p2 = Person(
-            id = 2,
             fullName = "Amy Smith",
             email = "amy@mail.com",
             isCourier = false,
@@ -64,7 +62,6 @@ class CargoListActivity : CoreActivity<CargoListVM>(CargoListVM::class.java, R.l
         )
 
         val p3 = Person(
-            id = 3,
             fullName = "Jane Smith",
             email = "jane@mail.com",
             isCourier = false,

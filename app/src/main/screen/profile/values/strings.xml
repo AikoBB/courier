@@ -9,5 +9,6 @@
     <string name="label_charging_info">Delivery costs you have paid will appear here!</string>
     <string name="warning_feature_later">This feature will be available later</string>
     <string name="label_no_reviews">Looks like nobody has not reviewed your profile yet.</string>
+    <string name="label_ratings">Rating: %.2f</string>
 
 </resources>

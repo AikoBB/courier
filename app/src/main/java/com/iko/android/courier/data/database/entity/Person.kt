@@ -1,9 +1,10 @@
 package com.iko.android.courier.data.database.entity
 
+import org.parceler.Parcel
 import java.util.*
 
+@Parcel
 data class Person(
-    val id: Long = 1,
     var fullName: String? = null,
     var phoneNumber: String? = null,
     var email: String? = null,
@@ -14,9 +15,10 @@ data class Person(
 )
 
 data class Review(
-    val reviewedId: Long = 1,
+    val reviewedEmail: String? = null,
     var reviewerName: String? = null,
     var reviewerAvatar: String? = null,
     var review: String? = null,
+    var rate: Int = 0,
     var date: Date? = null
 )

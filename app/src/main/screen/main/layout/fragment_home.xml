@@ -37,11 +37,11 @@
                 android:id="@+id/tv_greeting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/label_greetings"
                 android:textColor="@color/md_grey_400"
                 android:textSize="@dimen/medium_text"
                 android:gravity="center"
-                android:layout_centerInParent="true"/>
+                android:layout_centerInParent="true"
+                android:visibility="invisible"/>
 
         <TextView
                 android:layout_width="match_parent"

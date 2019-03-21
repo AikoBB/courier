@@ -1,8 +1,8 @@
 package com.iko.android.courier.di.components.main
 
 import androidx.lifecycle.ViewModel
+import com.iko.android.courier.di.scope.ApplicationScope
 import com.iko.android.courier.ui.main.MainVM
-import com.iko.android.courier.ui.main.home.HomeVM
 import com.iko.android.courier.ui.splash.SplashVM
 import com.iko.android.modularapp.di.viewmodel.ViewModelKey
 import dagger.Binds
@@ -19,12 +19,8 @@ abstract class MainModule {
 
     @Binds
     @IntoMap
+    @ApplicationScope
     @ViewModelKey(MainVM::class)
     abstract fun bindMainVM(viewModel: MainVM): ViewModel
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(HomeVM::class)
-    abstract fun bindHomeVM(viewModel: HomeVM): ViewModel
 
 }

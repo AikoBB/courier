@@ -5,10 +5,12 @@
                                                    android:layout_height="match_parent"
                                                    android:fitsSystemWindows="true">
 
-    <com.iko.android.core.custom_view.CustomToolbar
-            android:id="@+id/toolbar"
+    <TextView
+            android:id="@+id/name"
+            style="@style/WhiteTitleAppText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
             app:layout_constraintTop_toTopOf="parent"/>
 
     <RelativeLayout
@@ -16,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintTop_toBottomOf="@+id/name"
             android:background="@color/colorPrimary">
 
         <ImageView
@@ -90,7 +92,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Rating: 12.0"/>
+                    android:text="Rating: 0.0"/>
 
         </LinearLayout>
 

@@ -68,8 +68,11 @@ dependencies {
     kapt GoogleLibs.daggerCompiler
 
     api FirebaseLibs.auth
+    api FirebaseLibs.database
     api GoogleLibs.auth
 
+    api ThirdLibs.parcels
+    kapt ThirdLibs.parcelsProcessor
     implementation ThirdLibs.foldingCell
     implementation FacebookLibs.fresco
     implementation project(Modules.core)

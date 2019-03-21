@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import javax.inject.Inject
@@ -36,6 +37,20 @@ abstract class CoreFragment<V : CoreViewModel<*>>(
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(layoutId, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        subscribeLoadingData()
+    }
+
+    private fun subscribeLoadingData() {
+        viewModel.isLoading.observe(this, Observer {
+            when (it) {
+                true -> activity.showLoading()
+                else -> activity.hideLoading()
+            }
+        })
     }
 
     override fun onAttach(context: Context?) {
