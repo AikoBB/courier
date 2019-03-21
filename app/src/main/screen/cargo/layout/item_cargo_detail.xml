@@ -84,9 +84,10 @@
             layout="@layout/item_person_info" />
 
     <Button
+            android:id="@+id/btn_request"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/label_requests"
+            android:text="@string/label_request"
             android:textSize="@dimen/medium_text"
             android:textColor="@color/md_white_1000"
             android:background="@color/colorPrimary"

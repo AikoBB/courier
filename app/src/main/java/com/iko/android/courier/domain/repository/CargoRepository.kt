@@ -6,6 +6,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.iko.android.courier.data.database.entity.Cargo
 import com.iko.android.courier.data.database.entity.CargoList
+import com.iko.android.courier.data.database.entity.Person
 import com.iko.android.courier.data.prefs.AppPreferences
 import com.iko.android.courier.domain.Callback
 import javax.inject.Inject
@@ -14,6 +15,7 @@ interface CargoRepository {
 
     fun createCargo(cargo: Cargo, callback: Callback<Cargo, String?>)
     fun updateCargo(cargo: Cargo, callback: Callback<Cargo, String?>)
+    fun deleteCargo(cargoId: String, callback: Callback<Any?, String?>)
     fun getCargoList(callback: Callback<CargoList, String?>)
 
     class Network @Inject constructor(
@@ -36,6 +38,11 @@ interface CargoRepository {
             callback.onSuccess(cargo)
         }
 
+        override fun deleteCargo(cargoId: String, callback: Callback<Any?, String?>) {
+            cargoReference.child(cargoId).removeValue()
+            callback.onSuccess(null)
+        }
+
         override fun getCargoList(callback: Callback<CargoList, String?>) {
             callback.onSuccess(cargoList)
             cargoReference.addValueEventListener(object : ValueEventListener {
@@ -51,10 +58,18 @@ interface CargoRepository {
                     }
                     cargoList.own = cargoes.filter { it.sender!!.email == prefs.email }
                     cargoList.delivers = cargoes.filter { it.assignee?.email == prefs.email }
-                    cargoList.readyForDeliver = cargoes.filter { it.assignee == null }
+                    cargoList.readyForDeliver = cargoes.filter {
+                        it.assignee == null
+                                && it.sender!!.email != prefs.email
+                                && isRequestAlreadySent(it.requests)
+                    }
+                    callback.onSuccess(cargoList)
                 }
             })
         }
+
+        private fun isRequestAlreadySent(requests: MutableList<Person>) =
+            requests.filter { it.email == prefs.email }.isNotEmpty()
     }
 
 }

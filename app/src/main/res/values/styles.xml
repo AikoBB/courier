@@ -7,7 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:typeface">sans</item>
-        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorPrimary">@color/colorText</item>
         <item name="android:textColorSecondary">@android:color/white</item>
     </style>
 

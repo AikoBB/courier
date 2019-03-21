@@ -50,8 +50,8 @@ class CargoVH(itemView: View) : CoreViewHolder<Cargo>(itemView) {
             itemView.detail.tv_weight.text = this
         }
 
-        item.weight?.toString().run {
-            itemView.short_info.request.text = "12"
+        item.requests?.size?.toString().run {
+            itemView.short_info.request.text = this
         }
 
         item.sender?.run {
@@ -84,7 +84,7 @@ class CargoVH(itemView: View) : CoreViewHolder<Cargo>(itemView) {
         fun create(parent: ViewGroup, listener: CargoAdapter.Listener): CargoVH {
             val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_cargo, parent, false)
             val holder = CargoVH(itemView)
-            //holder.itemView.setOnClickListener { listener.onCargoClick(holder.cargo) }
+            holder.itemView.detail.btn_request.setOnClickListener { listener.onCargoRequestClick(holder.cargo) }
             return holder
         }
     }

@@ -3,6 +3,7 @@ package com.iko.android.courier.ui.main
 import com.iko.android.courier.data.Event
 import com.iko.android.courier.data.ProfileEvent
 import com.iko.android.courier.data.database.entity.Person
+import com.iko.android.courier.data.prefs.AppPreferences
 import com.iko.android.courier.domain.Callback
 import com.iko.android.courier.domain.usecase.GetCurrentUser
 import com.iko.android.courier.domain.usecase.UseCase
@@ -10,10 +11,11 @@ import com.iko.android.modularapp.base.CoreViewModel
 import javax.inject.Inject
 
 class MainVM @Inject constructor(
-    private val getCurrentUser: GetCurrentUser
+    private val getCurrentUser: GetCurrentUser,
+    private val prefs: AppPreferences
 ) : CoreViewModel<Event>() {
 
-    var currentUser: Person? = null
+    var currentUser: Person? = prefs.currentUser
 
     init {
         if (currentUser == null) {
@@ -28,9 +30,10 @@ class MainVM @Inject constructor(
         }
     }
 
-    private fun onCurrentUserFetched(user: Person){
+    private fun onCurrentUserFetched(user: Person) {
         hideLoading()
         this.currentUser = user
+        prefs.currentUser = user
         event.value = ProfileEvent.ProfileFetched(user)
     }
 }

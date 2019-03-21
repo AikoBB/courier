@@ -1,6 +1,7 @@
 package com.iko.android.courier.di.components.cargo
 
 import androidx.lifecycle.ViewModel
+import com.iko.android.courier.di.scope.ApplicationScope
 import com.iko.android.courier.ui.cargo.create.CreateCargoVM
 import com.iko.android.courier.ui.cargo.list.CargoListVM
 import com.iko.android.modularapp.di.viewmodel.ViewModelKey
@@ -13,6 +14,7 @@ abstract class CargoModule {
 
     @Binds
     @IntoMap
+    @ApplicationScope
     @ViewModelKey(CargoListVM::class)
     abstract fun bindMainVM(viewModel: CargoListVM): ViewModel
 

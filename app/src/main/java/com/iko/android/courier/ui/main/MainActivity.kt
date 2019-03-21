@@ -6,7 +6,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.iko.android.courier.CourierApp
 import com.iko.android.courier.R
-import com.iko.android.courier.ui.main.home.HomeFragment
+import com.iko.android.courier.ui.cargo.list.DeliversFragment
+import com.iko.android.courier.ui.cargo.list.OwnCargoListFragment
 import com.iko.android.courier.ui.profile.ProfileFragment
 import com.iko.android.modularapp.base.CoreActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -29,9 +30,12 @@ class MainActivity : CoreActivity<MainVM>(MainVM::class.java, R.layout.activity_
             if (bottom_navigation.selectedItemId != item.itemId)
                 when (item.itemId) {
                     R.id.action_home -> showHomeFragment()
-                    R.id.action_cargo -> showFragment(HomeFragment(), HomeFragment::class.java.canonicalName)
-                    R.id.action_delivers -> showFragment(HomeFragment(), HomeFragment::class.java.canonicalName)
-                    R.id.action_profile -> showFragment(ProfileFragment.getInstance(viewModel.currentUser!!), ProfileFragment::class.java.canonicalName)
+                    R.id.action_cargo -> showFragment(
+                        OwnCargoListFragment(),
+                        OwnCargoListFragment::class.java.canonicalName
+                    )
+                    R.id.action_delivers -> showFragment(DeliversFragment(), DeliversFragment::class.java.canonicalName)
+                    R.id.action_profile -> showFragment(ProfileFragment(), ProfileFragment::class.java.canonicalName)
                 }
             true
         }
@@ -59,7 +63,7 @@ class MainActivity : CoreActivity<MainVM>(MainVM::class.java, R.layout.activity_
 
     companion object {
 
-        fun start(activity: Activity?){
+        fun start(activity: Activity?) {
             val intent = Intent(activity, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or
                     Intent.FLAG_ACTIVITY_CLEAR_TASK or

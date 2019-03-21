@@ -3,8 +3,12 @@
     <string name="label_cargoes">Cargoes</string>
     <string name="label_empty_list">The list is empty</string>
     <string name="label_no_orders">Looks like nobody has not created order yet.</string>
+    <string name="label_no_own_cargoes">Looks like you have not created order yet.</string>
+    <string name="label_no_delivers">Looks like you have not delivered any order yet.</string>
     <string name="label_price" translatable="false">PRICE(c)</string>
     <string name="label_requests" translatable="false">REQUESTS</string>
+    <string name="label_delete" translatable="false">Delete</string>
+    <string name="label_status" translatable="false">Status</string>
     <string name="label_request" translatable="false">REQUEST</string>
     <string name="label_weight" translatable="false">WEIGHT(kg)</string>
     <string name="label_delivery_type" translatable="false">DELIVERY TYPE</string>
@@ -32,6 +36,9 @@
     <string name="warning_empty_incorrect">Incorrect %s or empty!</string>
     <string name="warning_choose_delivery_info">Select delivery %s!</string>
     <string name="warning_cargo_created">Your cargo with id = %s is successfully created!</string>
+    <string name="warning_cargo_deleted">Your cargo with id = %s is successfully deleted!</string>
+    <string name="warning_request_sent">Your request for cargo with id = %s is successfully sent!</string>
+    <string name="warning_request_accept">You accepted request of %s, now you can check the status of your cargo.</string>
 
     <string-array name="delivery_type">
         <item>Express</item>

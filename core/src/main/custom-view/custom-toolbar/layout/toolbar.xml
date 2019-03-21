@@ -2,11 +2,12 @@
 <com.google.android.material.appbar.AppBarLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.Toolbar
             android:id="@+id/tb"
             android:layout_width="match_parent"
+            app:titleTextColor="@color/md_white_1000"
             android:layout_height="?android:actionBarSize"/>
 
 </com.google.android.material.appbar.AppBarLayout>

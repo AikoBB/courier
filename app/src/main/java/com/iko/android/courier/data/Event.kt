@@ -1,6 +1,7 @@
 package com.iko.android.courier.data
 
 import com.iko.android.courier.data.database.entity.Cargo
+import com.iko.android.courier.data.database.entity.CargoList
 import com.iko.android.courier.data.database.entity.Person
 import com.iko.android.courier.data.database.entity.Review
 
@@ -23,6 +24,8 @@ sealed class ProfileEvent: Event(){
 
 sealed class CargoEvent: Event(){
     class CargoUpdated(val cargo: Cargo): CargoEvent()
+    class CargoRequestSent(val cargoId: String): CargoEvent()
     class CargoCreated(val cargo: Cargo): CargoEvent()
-    class CargoListFetched(val cargoes: List<Cargo>): CargoEvent()
+    class CargoDeleted(val cargoId: String): CargoEvent()
+    class CargoListFetched(val cargoes: CargoList): CargoEvent()
 }

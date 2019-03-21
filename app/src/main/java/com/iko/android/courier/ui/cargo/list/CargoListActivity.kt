@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iko.android.core.extension.showMessage
+import com.iko.android.core.extension.showWarningDialog
 import com.iko.android.courier.CourierApp
 import com.iko.android.courier.R
 import com.iko.android.courier.data.CargoEvent
@@ -44,15 +45,28 @@ class CargoListActivity : CoreActivity<CargoListVM>(CargoListVM::class.java, R.l
     private fun subscribeLiveData() {
         viewModel.event.observe(this, Observer {
             when (it) {
-                is CargoEvent.CargoListFetched -> adapter.addItems(it.cargoes)
+                is CargoEvent.CargoListFetched -> adapter.addItems(
+                    it.cargoes.readyForDeliver,
+                    getString(R.string.label_no_orders)
+                )
+                is CargoEvent.CargoRequestSent -> showWarningDialog(
+                    getString(
+                        R.string.warning_request_sent,
+                        it.cargoId
+                    )
+                )
                 is Event.Notification -> showMessage(it.message)
             }
         })
     }
 
-    override fun onCargoClick(cargo: Cargo) {
-
+    override fun onCargoRequestClick(cargo: Cargo) {
+        viewModel.sendRequest(cargo)
     }
+
+    override fun onCargoDeleteClick(cargo: Cargo) {}
+
+    override fun onShowStatusClick(cargo: Cargo) {}
 
     companion object {
 

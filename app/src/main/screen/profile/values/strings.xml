@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="label_personal_info">Personal Info</string>
+    <string name="label_exit">Sign Out</string>
     <string name="label_reviews">Reviews</string>
     <string name="label_balance">Balance</string>
     <string name="label_earnings">Earnings</string>

@@ -1,4 +1,4 @@
-package com.iko.android.courier.ui.main.home
+package com.iko.android.courier.ui.main
 
 import android.os.Bundle
 import android.view.View
@@ -10,7 +10,6 @@ import com.iko.android.courier.data.ProfileEvent
 import com.iko.android.courier.data.database.entity.Person
 import com.iko.android.courier.ui.cargo.create.CreateCargoActivity
 import com.iko.android.courier.ui.cargo.list.CargoListActivity
-import com.iko.android.courier.ui.main.MainVM
 import com.iko.android.modularapp.base.CoreFragment
 import com.iko.android.modularapp.extension.visible
 import kotlinx.android.synthetic.main.fragment_home.*

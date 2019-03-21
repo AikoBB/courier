@@ -17,6 +17,7 @@ data class Cargo(
     var price: Float? = null,
     var deliveryTime: Date? = null,
     var deliveryType: DeliveryType? = null,
+    var requests: MutableList<Person> = mutableListOf(),
     var states: MutableList<CargoStateInfo> = mutableListOf()
 ) {
     fun getDateOnly(): String {
