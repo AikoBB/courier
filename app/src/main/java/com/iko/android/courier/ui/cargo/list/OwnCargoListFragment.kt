@@ -13,6 +13,7 @@ import com.iko.android.courier.data.CargoEvent
 import com.iko.android.courier.data.Event
 import com.iko.android.courier.data.database.entity.Cargo
 import com.iko.android.courier.ui.cargo.list.adapter.CargoAdapter
+import com.iko.android.courier.ui.cargo.state.CargoManagementActivity
 import com.iko.android.modularapp.base.CoreFragment
 import kotlinx.android.synthetic.main.activity_cargo_list.*
 
@@ -45,8 +46,16 @@ class OwnCargoListFragment : CoreFragment<CargoListVM>(CargoListVM::class.java, 
     private fun subscribeLiveData() {
         viewModel.event.observe(this, Observer {
             when (it) {
-                is CargoEvent.CargoListFetched -> adapter.addManageableCargoes(it.cargoes.own, getString(R.string.label_no_own_cargoes))
-                is CargoEvent.CargoDeleted -> context?.showWarningDialog(getString(R.string.warning_cargo_deleted, it.cargoId))
+                is CargoEvent.CargoListFetched -> adapter.addManageableCargoes(
+                    it.cargoes.own,
+                    getString(R.string.label_no_own_cargoes)
+                )
+                is CargoEvent.CargoDeleted -> context?.showWarningDialog(
+                    getString(
+                        R.string.warning_cargo_deleted,
+                        it.cargoId
+                    )
+                )
                 is Event.Notification -> context?.showMessage(it.message)
             }
         })
@@ -57,11 +66,11 @@ class OwnCargoListFragment : CoreFragment<CargoListVM>(CargoListVM::class.java, 
     }
 
     override fun onCargoRequestClick(cargo: Cargo) {
-
+        CargoManagementActivity.start(activity, cargo.id!!)
     }
 
     override fun onShowStatusClick(cargo: Cargo) {
-
+        CargoManagementActivity.start(activity, cargo.id!!)
     }
 
 }

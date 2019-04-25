@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.iko.android.courier.di.scope.ApplicationScope
 import com.iko.android.courier.ui.cargo.create.CreateCargoVM
 import com.iko.android.courier.ui.cargo.list.CargoListVM
+import com.iko.android.courier.ui.cargo.state.CargoManagementVM
 import com.iko.android.modularapp.di.viewmodel.ViewModelKey
 import dagger.Binds
 import dagger.Module
@@ -22,5 +23,11 @@ abstract class CargoModule {
     @IntoMap
     @ViewModelKey(CreateCargoVM::class)
     abstract fun bindCreateCargoVM(viewModel: CreateCargoVM): ViewModel
+
+    @Binds
+    @IntoMap
+    @ApplicationScope
+    @ViewModelKey(CargoManagementVM::class)
+    abstract fun bindCargoManagementVM(viewModel: CargoManagementVM): ViewModel
 
 }

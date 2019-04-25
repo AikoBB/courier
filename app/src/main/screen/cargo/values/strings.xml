@@ -2,9 +2,10 @@
 <resources>
     <string name="label_cargoes">Cargoes</string>
     <string name="label_empty_list">The list is empty</string>
-    <string name="label_no_orders">Looks like nobody has not created order yet.</string>
+    <string name="label_no_orders">Looks like nobody created order yet.</string>
     <string name="label_no_own_cargoes">Looks like you have not created order yet.</string>
     <string name="label_no_delivers">Looks like you have not delivered any order yet.</string>
+    <string name="label_no_request">Looks like nobody sent request for your order yet.</string>
     <string name="label_price" translatable="false">PRICE(c)</string>
     <string name="label_requests" translatable="false">REQUESTS</string>
     <string name="label_delete" translatable="false">Delete</string>
@@ -45,5 +46,13 @@
         <item>ASAP</item>
         <item>Any Time</item>
     </string-array>
+
+    <string name="label_order_created">Order Created</string>
+    <string name="label_courier_on_way">Courier is on the way</string>
+    <string name="label_pick_up_pkg">Pick up Package</string>
+    <string name="label_deliver_pkg">Deliver package</string>
+    <string name="label_accept">Accept</string>
+    <string name="label_delivery_requests">Deliver Requests</string>
+    <string name="label_cargo_delivery_state">Cargo Delivery State</string>
 
 </resources>

@@ -14,6 +14,7 @@ import javax.inject.Inject
 interface CargoRepository {
 
     fun createCargo(cargo: Cargo, callback: Callback<Cargo, String?>)
+    fun getCargoById(cargoId: String, callback: Callback<Cargo, String?>)
     fun updateCargo(cargo: Cargo, callback: Callback<Cargo, String?>)
     fun deleteCargo(cargoId: String, callback: Callback<Any?, String?>)
     fun getCargoList(callback: Callback<CargoList, String?>)
@@ -43,6 +44,24 @@ interface CargoRepository {
             callback.onSuccess(null)
         }
 
+        override fun getCargoById(cargoId: String, callback: Callback<Cargo, String?>) {
+            cargoReference.addValueEventListener(object : ValueEventListener {
+                override fun onCancelled(p0: DatabaseError) {
+                    callback.onFailed(p0.message)
+                }
+
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    dataSnapshot.children.forEach {
+                        val cargo = it.getValue(Cargo::class.java)
+                        if(cargo?.id == cargoId){
+                            callback.onSuccess(cargo)
+                            return
+                        }
+                    }
+                }
+            })
+        }
+
         override fun getCargoList(callback: Callback<CargoList, String?>) {
             callback.onSuccess(cargoList)
             cargoReference.addValueEventListener(object : ValueEventListener {
@@ -61,7 +80,6 @@ interface CargoRepository {
                     cargoList.readyForDeliver = cargoes.filter {
                         it.assignee == null
                                 && it.sender!!.email != prefs.email
-                                && isRequestAlreadySent(it.requests)
                     }
                     callback.onSuccess(cargoList)
                 }

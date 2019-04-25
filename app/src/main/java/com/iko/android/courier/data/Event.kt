@@ -28,4 +28,7 @@ sealed class CargoEvent: Event(){
     class CargoCreated(val cargo: Cargo): CargoEvent()
     class CargoDeleted(val cargoId: String): CargoEvent()
     class CargoListFetched(val cargoes: CargoList): CargoEvent()
+    class CargoInfoFetched(val cargo: Cargo): CargoEvent()
+    class CargoRequestAccepted(val cargo: Cargo): CargoEvent()
+    class ProfileRequested(val person: Person): CargoEvent()
 }

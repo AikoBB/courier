@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.iko.android.courier">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
             android:name=".CourierApp"
             android:allowBackup="true"
@@ -30,9 +32,10 @@
                   android:screenOrientation="portrait"/>
 
         <activity android:name=".ui.cargo.create.CreateCargoActivity"
-                  android:theme="@style/CreateCargoStyle"
                   android:screenOrientation="portrait"/>
 
+        <activity android:name=".ui.cargo.state.CargoManagementActivity"
+                  android:screenOrientation="portrait"/>
 
     </application>
 
